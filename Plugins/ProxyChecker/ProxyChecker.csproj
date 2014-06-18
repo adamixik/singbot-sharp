@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECB14CFC-16B6-49D5-9872-3922119F117E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SingBot.Plugins</RootNamespace>
+    <AssemblyName>ProxyChecker</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Output\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Output\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Output\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <FxCopLogFile>obj\Debug\CodeAnalysisLog.xml</FxCopLogFile>
+    <FxCopRuleAssemblies>DesignRules.dll;GlobalizationRules.dll;InteroperabilityRules.dll;MaintainabilityRules.dll;NamingRules.dll;PerformanceRules.dll;ReliabilityRules.dll;SecurityRules.dll;UsageRules.dll</FxCopRuleAssemblies>
+    <FxCopUseTypeNameInSuppression>true</FxCopUseTypeNameInSuppression>
+    <FxCopModuleSuppressionsFile>ModuleSuppressions.cs</FxCopModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <BaseAddress>4194304</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DocumentationFile>
+    </DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <FxCopInputAssembly>
+    </FxCopInputAssembly>
+    <FxCopRules>
+    </FxCopRules>
+    <FxCopSpellCheckLanguages>
+    </FxCopSpellCheckLanguages>
+    <RunFxCop>false</RunFxCop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\Output\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <FxCopLogFile>obj\Release\CodeAnalysisLog.xml</FxCopLogFile>
+    <FxCopRuleAssemblies>DesignRules.dll;GlobalizationRules.dll;InteroperabilityRules.dll;MaintainabilityRules.dll;NamingRules.dll;PerformanceRules.dll;ReliabilityRules.dll;SecurityRules.dll;UsageRules.dll</FxCopRuleAssemblies>
+    <FxCopUseTypeNameInSuppression>true</FxCopUseTypeNameInSuppression>
+    <FxCopModuleSuppressionsFile>ModuleSuppressions.cs</FxCopModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <BaseAddress>4194304</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DocumentationFile>
+    </DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <FxCopInputAssembly>
+    </FxCopInputAssembly>
+    <FxCopRules>
+    </FxCopRules>
+    <FxCopSpellCheckLanguages>
+    </FxCopSpellCheckLanguages>
+    <RunFxCop>false</RunFxCop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'x86 Release|AnyCPU' ">
+    <OutputPath>..\..\Output\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <FxCopLogFile>obj\Release\CodeAnalysisLog.xml</FxCopLogFile>
+    <FxCopRuleAssemblies>DesignRules.dll;GlobalizationRules.dll;InteroperabilityRules.dll;MaintainabilityRules.dll;NamingRules.dll;PerformanceRules.dll;ReliabilityRules.dll;SecurityRules.dll;UsageRules.dll</FxCopRuleAssemblies>
+    <FxCopUseTypeNameInSuppression>true</FxCopUseTypeNameInSuppression>
+    <FxCopModuleSuppressionsFile>ModuleSuppressions.cs</FxCopModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <BaseAddress>4194304</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DocumentationFile>
+    </DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <FxCopInputAssembly>
+    </FxCopInputAssembly>
+    <FxCopRules>
+    </FxCopRules>
+    <FxCopSpellCheckLanguages>
+    </FxCopSpellCheckLanguages>
+    <RunFxCop>false</RunFxCop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'x86 Release|x86' ">
+    <OutputPath>..\..\Output\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <FxCopLogFile>obj\Release\CodeAnalysisLog.xml</FxCopLogFile>
+    <FxCopRuleAssemblies>DesignRules.dll;GlobalizationRules.dll;InteroperabilityRules.dll;MaintainabilityRules.dll;NamingRules.dll;PerformanceRules.dll;ReliabilityRules.dll;SecurityRules.dll;UsageRules.dll</FxCopRuleAssemblies>
+    <FxCopUseTypeNameInSuppression>true</FxCopUseTypeNameInSuppression>
+    <FxCopModuleSuppressionsFile>ModuleSuppressions.cs</FxCopModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <BaseAddress>4194304</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DocumentationFile>
+    </DocumentationFile>
+    <FileAlignment>4096</FileAlignment>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <FxCopInputAssembly>
+    </FxCopInputAssembly>
+    <FxCopRules>
+    </FxCopRules>
+    <FxCopSpellCheckLanguages>
+    </FxCopSpellCheckLanguages>
+    <RunFxCop>false</RunFxCop>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cryptography\Crc32.cs" />
+    <Compile Include="Cryptography\OpenPGP\DecryptAsyncCompletedEventArgs.cs" />
+    <Compile Include="Cryptography\OpenPGP\EncryptAsyncCompletedEventArgs.cs" />
+    <Compile Include="Cryptography\OpenPGP\GnuPG.cs" />
+    <Compile Include="Cryptography\OpenPGP\GnuPGBadPassphraseException.cs" />
+    <Compile Include="Cryptography\OpenPGP\GnuPGException.cs" />
+    <Compile Include="Cryptography\OpenPGP\GnuPGKey.cs" />
+    <Compile Include="Cryptography\OpenPGP\GnuPGKeyCollection.cs" />
+    <Compile Include="Cryptography\OpenPGP\SignAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\ConnectionClosedEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\FtpRequestEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\FtpResponseEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\FxpCopyAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\GetDirListAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\GetDirListDeepAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\GetFileAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\OpenAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\PutFileAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\TransferCompleteEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\TransferProgressEventArgs.cs" />
+    <Compile Include="Net\Ftp\EventArgs\ValidateServerCertificateEventArgs.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpAsynchronousOperationException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpAuthenticationException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpBusyException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpCertificateValidationException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpCommandNotSupportedException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpCommandResponseTimeoutException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpConnectionBrokenException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpConnectionClosedException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpConnectionOpenException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpDataCompressionException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpDataConnectionException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpDataConnectionTimeoutException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpDataTransferException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpFeatureException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpHashingException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpHashingInvalidAlgorithmException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpHashingServerBusyException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpItemParsingException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpLoginException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpNetworkVersionException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpResponseException.cs" />
+    <Compile Include="Net\Ftp\Exceptions\FtpSecureConnectionException.cs" />
+    <Compile Include="Net\Ftp\FtpBase.cs" />
+    <Compile Include="Net\Ftp\FtpClient.cs" />
+    <Compile Include="Net\Ftp\FtpFeature.cs" />
+    <Compile Include="Net\Ftp\FtpFeatureArgument.cs" />
+    <Compile Include="Net\Ftp\FtpFeatureArgumentCollection.cs" />
+    <Compile Include="Net\Ftp\FtpFeatureCollection.cs" />
+    <Compile Include="Net\Ftp\FtpItem.cs" />
+    <Compile Include="Net\Ftp\FtpItemCollection.cs" />
+    <Compile Include="Net\Ftp\FtpListItemParser.cs" />
+    <Compile Include="Net\Ftp\FtpMlsxItem.cs" />
+    <Compile Include="Net\Ftp\FtpMlsxItemParser.cs" />
+    <Compile Include="Net\Ftp\FtpRequest.cs" />
+    <Compile Include="Net\Ftp\FtpResponse.cs" />
+    <Compile Include="Net\Ftp\FtpResponseCollection.cs" />
+    <Compile Include="Net\Ftp\FtpResponseQueue.cs" />
+    <Compile Include="Net\Ftp\FtpUtilities.cs" />
+    <Compile Include="Net\Ftp\IFtpItemParser.cs" />
+    <Compile Include="Net\Http\EventArgs\ConnectionClosedEventArgs.cs" />
+    <Compile Include="Net\Http\EventArgs\HttpRequestEventArgs.cs" />
+    <Compile Include="Net\Http\EventArgs\HttpResponseEventArgs.cs" />
+    <Compile Include="Net\Http\EventArgs\OpenAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Http\EventArgs\TransferCompleteEventArgs.cs" />
+    <Compile Include="Net\Http\EventArgs\TransferProgressEventArgs.cs" />
+    <Compile Include="Net\Http\EventArgs\ValidateServerCertificateEventArgs.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpAsynchronousOperationException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpAuthenticationException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpCertificateValidationException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpConnectionBrokenException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpConnectionClosedException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpConnectionOpenException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpDataCompressionException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpDataTransferException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpException.cs" />
+    <Compile Include="Net\Http\Exceptions\HttpSecureConnectionException.cs" />
+    <Compile Include="Net\Http\HTTP.cs" />
+    <Compile Include="Net\Http\HttpAuthorization.cs" />
+    <Compile Include="Net\Http\HttpClient.cs" />
+    <Compile Include="Net\Http\HttpCookie.cs" />
+    <Compile Include="Net\Http\HttpCookieCollection.cs" />
+    <Compile Include="Net\Http\HttpHeader.cs" />
+    <Compile Include="Net\Http\HttpHeaderCollection.cs" />
+    <Compile Include="Net\Http\HttpParameter.cs" />
+    <Compile Include="Net\Http\HttpParameterCollection.cs" />
+    <Compile Include="Net\Http\HttpRequest.cs" />
+    <Compile Include="Net\Http\HttpResponse.cs" />
+    <Compile Include="Net\Proxy\EventArgs\CreateConnectionAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Proxy\Exceptions\ProxyException.cs" />
+    <Compile Include="Net\Proxy\HttpProxyClient.cs" />
+    <Compile Include="Net\Proxy\IProxyClient.cs" />
+    <Compile Include="Net\Proxy\ProxyClientFactory.cs" />
+    <Compile Include="Net\Proxy\Socks4aProxyClient.cs" />
+    <Compile Include="Net\Proxy\Socks4ProxyClient.cs" />
+    <Compile Include="Net\Proxy\Socks5ProxyClient.cs" />
+    <Compile Include="Net\Proxy\Utils.cs" />
+    <Compile Include="ProxyChecker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Engine\SingBot.Engine.csproj">
+      <Project>{BE3255DB-4C44-47D0-B217-DDB05403850B}</Project>
+      <Name>SingBot.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

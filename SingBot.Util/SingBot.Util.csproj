@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83E02153-B560-4607-A1F6-70A2826AD39E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SingBot.Util</RootNamespace>
+    <AssemblyName>SingBot.Util</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LUA_CORE;USE_KOPILUA</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>TRACE;LUA_CORE;USE_KOPILUA</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="INIReader.cs" />
+    <Compile Include="NLua\CheckType.cs" />
+    <Compile Include="NLua\Config\NLuaConfig.cs" />
+    <Compile Include="NLua\Event\DebugHookEventArgs.cs" />
+    <Compile Include="NLua\Event\EventCodes.cs" />
+    <Compile Include="NLua\Event\EventMasks.cs" />
+    <Compile Include="NLua\Event\HookExceptionEventArgs.cs" />
+    <Compile Include="NLua\Exceptions\LuaException.cs" />
+    <Compile Include="NLua\Exceptions\LuaScriptException.cs" />
+    <Compile Include="NLua\Extensions\GeneralExtensions.cs" />
+    <Compile Include="NLua\GenerateEventAssembly\ClassGenerator.cs" />
+    <Compile Include="NLua\GenerateEventAssembly\CodeGeneration.cs" />
+    <Compile Include="NLua\GenerateEventAssembly\DelegateGenerator.cs" />
+    <Compile Include="NLua\GenerateEventAssembly\ILuaGeneratedType.cs" />
+    <Compile Include="NLua\GenerateEventAssembly\LuaClassType.cs" />
+    <Compile Include="NLua\KeraLua\KeraLua\CharPtr.cs" />
+    <Compile Include="NLua\KeraLua\KeraLua\Lua.cs" />
+    <Compile Include="NLua\KeraLua\KeraLua\LuaDebug.cs" />
+    <Compile Include="NLua\KeraLua\KeraLua\LuaState.cs" />
+    <Compile Include="NLua\KeraLua\KeraLua\LuaTag.cs" />
+    <Compile Include="NLua\KeraLua\KeraLua\NativeMethods.cs" />
+    <Compile Include="NLua\KopiLua\src\CharPtr.cs" />
+    <Compile Include="NLua\KopiLua\src\lapi.cs" />
+    <Compile Include="NLua\KopiLua\src\lauxlib.cs" />
+    <Compile Include="NLua\KopiLua\src\lbaselib.cs" />
+    <Compile Include="NLua\KopiLua\src\lcode.cs" />
+    <Compile Include="NLua\KopiLua\src\ldblib.cs" />
+    <Compile Include="NLua\KopiLua\src\ldebug.cs" />
+    <Compile Include="NLua\KopiLua\src\ldo.cs" />
+    <Compile Include="NLua\KopiLua\src\ldump.cs" />
+    <Compile Include="NLua\KopiLua\src\lfunc.cs" />
+    <Compile Include="NLua\KopiLua\src\lgc.cs" />
+    <Compile Include="NLua\KopiLua\src\linit.cs" />
+    <Compile Include="NLua\KopiLua\src\liolib.cs" />
+    <Compile Include="NLua\KopiLua\src\llex.cs" />
+    <Compile Include="NLua\KopiLua\src\llimits.cs" />
+    <Compile Include="NLua\KopiLua\src\lmathlib.cs" />
+    <Compile Include="NLua\KopiLua\src\lmem.cs" />
+    <Compile Include="NLua\KopiLua\src\lnet.cs" />
+    <Compile Include="NLua\KopiLua\src\loadlib.cs" />
+    <Compile Include="NLua\KopiLua\src\lobject.cs" />
+    <Compile Include="NLua\KopiLua\src\lopcodes.cs" />
+    <Compile Include="NLua\KopiLua\src\loslib.cs" />
+    <Compile Include="NLua\KopiLua\src\lparser.cs" />
+    <Compile Include="NLua\KopiLua\src\lstate.cs" />
+    <Compile Include="NLua\KopiLua\src\lstring.cs" />
+    <Compile Include="NLua\KopiLua\src\lstrlib.cs" />
+    <Compile Include="NLua\KopiLua\src\ltable.cs" />
+    <Compile Include="NLua\KopiLua\src\ltablib.cs" />
+    <Compile Include="NLua\KopiLua\src\ltm.cs" />
+    <Compile Include="NLua\KopiLua\src\lua.cs" />
+    <Compile Include="NLua\KopiLua\src\luaconf.cs" />
+    <Compile Include="NLua\KopiLua\src\LuaDebug.cs" />
+    <Compile Include="NLua\KopiLua\src\lualib.cs" />
+    <Compile Include="NLua\KopiLua\src\LuaState.cs" />
+    <Compile Include="NLua\KopiLua\src\LuaTag.cs" />
+    <Compile Include="NLua\KopiLua\src\lundump.cs" />
+    <Compile Include="NLua\KopiLua\src\lvm.cs" />
+    <Compile Include="NLua\KopiLua\src\lzio.cs" />
+    <Compile Include="NLua\KopiLua\src\print.cs" />
+    <Compile Include="NLua\KopiLua\src\printf\Tools.cs" />
+    <Compile Include="NLua\Lua.cs" />
+    <Compile Include="NLua\LuaBase.cs" />
+    <Compile Include="NLua\LuaFunction.cs" />
+    <Compile Include="NLua\LuaGlobalAttribute.cs" />
+    <Compile Include="NLua\LuaHideAttribute.cs" />
+    <Compile Include="NLua\LuaLib\GCOptions.cs" />
+    <Compile Include="NLua\LuaLib\LuaEnums.cs" />
+    <Compile Include="NLua\LuaLib\LuaIndexes.cs" />
+    <Compile Include="NLua\LuaLib\LuaLib.cs" />
+    <Compile Include="NLua\LuaLib\LuaTypes.cs" />
+    <Compile Include="NLua\LuaLib\References.cs" />
+    <Compile Include="NLua\LuaRegistrationHelper.cs" />
+    <Compile Include="NLua\LuaTable.cs" />
+    <Compile Include="NLua\LuaUserData.cs" />
+    <Compile Include="NLua\Metatables.cs" />
+    <Compile Include="NLua\Method\EventHandlerContainer.cs" />
+    <Compile Include="NLua\Method\LuaClassHelper.cs" />
+    <Compile Include="NLua\Method\LuaDelegate.cs" />
+    <Compile Include="NLua\Method\LuaEventHandler.cs" />
+    <Compile Include="NLua\Method\LuaMethodWrapper.cs" />
+    <Compile Include="NLua\Method\MethodArgs.cs" />
+    <Compile Include="NLua\Method\MethodCache.cs" />
+    <Compile Include="NLua\Method\RegisterEventHandler.cs" />
+    <Compile Include="NLua\ObjectTranslator.cs" />
+    <Compile Include="NLua\ObjectTranslatorPool.cs" />
+    <Compile Include="NLua\ProxyType.cs" />
+    <Compile Include="OS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rss.cs" />
+    <Compile Include="RssManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NLua\key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NLua\KeraLua\KeraLua\Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
