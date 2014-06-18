@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<SingBot>
+    
+    <Network Name="WeNet" Port="6667" Nickname="SingBot_" Realname="SingBot [http://singbot.unix-net.ru]" Username="SingBot" Password="" SendDelay="200">
+        <Server Address="irc.unix-net.ru" />
+        <Channel Name="#random" />
+    </Network>
+    
+    
+    <Plugins>
+        <AutoOp>
+            <Op>*!*@adamix.ntown</Op>
+        </AutoOp>
+    </Plugins>
+
+        <Plugin Name="Reconnect.dll" />
+        <Script Name="Sample.cs" />
+        <Script Name="AutoIdentify.cs" />
+        <Script Name="Hashes.cs" />
+        <Script Name="AutoRejoin.cs" />
+        <Script Name="RandomGenerator.cs" />
+        <Script Name="GUIDGenerator.cs" />
+        <Script Name="OBoobs.cs" />
+        <Script Name="HTTPTitle.cs" />
+        <Script Name="Calculator.cs" />
+        <Script Name="Relax.cs" />
+        <Script Name="Bomb.cs" />
+        <Script Name="SampleCommand.cs" />
+        <Script Name="SimpleCommands.cs" />
+        <Plugin Name="SecurityLab.dll" />
+        <Plugin Name="HabraHabr.dll" />
+        <Plugin Name="NewsYandex.dll" />
+        <Plugin Name="CSharpInterp.dll" />
+        <Plugin Name="LuaInterp.dll" />
+        <Plugin Name="Auth.dll" />
+        <Plugin Name="ChannelLinking.dll" />
+        <Plugin Name="ProxyChecker.dll" />
+        <Plugin Name="Seen.dll" />
+
+</SingBot>
