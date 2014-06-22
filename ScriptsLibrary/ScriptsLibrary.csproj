@@ -74,6 +74,9 @@
     <Compile Include="Bomb.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="LinuxCommands.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="SimpleCommands.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>

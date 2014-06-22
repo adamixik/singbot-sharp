@@ -42,7 +42,7 @@ namespace SingBot.Scripts {
         void Bot_OnConnected(object sender, EventArgs e)
         {
             Network n = (Network)sender;
-            n.SendMessage(Irc.SendType.Message, "NickServ", "IDENTIFY *******************PASSWORD*****************");
+            n.SendMessage(Irc.SendType.Message, "NickServ", "IDENTIFY pass");
         }
         #endregion
     }

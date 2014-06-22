@@ -23,6 +23,8 @@ using System.Text.RegularExpressions;
 namespace SingBot {
 	public abstract class Plugin {
 
+        protected List<string> Channels = new List<string>();
+
 		#region " Constructor "
 		public Plugin(Bot bot) {
 			this.bot = bot;
@@ -64,6 +66,15 @@ namespace SingBot {
 			}
 		}
 
+        public bool IsChannelEnabled(string channel)
+        {
+            if (Channels.Count == 0) return true;
+            return Channels.Contains(channel);
+        }
+        public void AddChannelEnabled(string channel)
+        {
+            Channels.Add(channel);
+        }
 
         public static string Format(int i)
         {

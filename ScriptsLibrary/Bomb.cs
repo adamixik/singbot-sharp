@@ -44,8 +44,13 @@ namespace SingBot.Scripts {
         {
             base.OnCommand(n, e, type, args);
 
+            if (!script.IsChannelEnabled(e.Data.Channel))
+            {
+                Console.WriteLine("returning...");
+                return;
+            }
+
             int time = script.GetTimeBeforeNextUse(e.Data.Nick);
-            
             
 
             if(time != -1 && script.used[time].seconds > 0)
@@ -201,6 +206,8 @@ namespace SingBot.Scripts {
         public override void OnCommand(Network n, Irc.IrcEventArgs e, CommandType type, List<string> args)
         {
             base.OnCommand(n, e, type, args);
+
+            if (!script.IsChannelEnabled(e.Data.Channel)) return;
 
             string cur = args[0];
 

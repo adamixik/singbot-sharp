@@ -24,5 +24,5 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyTitle("AutoOp Plugin")]
 [assembly: AssemblyDescription("A plugin for the SingBot IRC Bot. Visit http://singbot.unix-net.ru for information.")]
-[assembly: AssemblyCompany("Hannes Sachsenhofer")]
-[assembly: AssemblyVersion("1.2.0.*")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyVersion("2.0.1.*")]

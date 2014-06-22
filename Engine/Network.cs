@@ -62,7 +62,7 @@ namespace SingBot {
 		}
 
 		public new void Disconnect() {
-			RfcQuit("SingBot IRC bot [http://singbot.unix-net.ru]");
+			RfcQuit("SingBot IRC Bot [http://singbot.unix-net.ru]");
 			base.Disconnect();
 		}
 		#endregion

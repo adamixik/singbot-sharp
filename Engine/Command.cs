@@ -95,9 +95,9 @@ namespace SingBot
                     if (level < _command.access)
                     {
                         n.SendMessage(
-                            SingBot.Irc.SendType.Message,
-                            e.Data.Channel,
-                            e.Data.Nick + ": You dont have access to use this command."
+                            SingBot.Irc.SendType.Notice,
+                            e.Data.Nick,
+                            "You dont have access to use this command."
                         );
                         return;
                     }
@@ -127,11 +127,11 @@ namespace SingBot
                     a.Add(args[i]);
                 }
 				if (level < _command.access) {
-					n.SendMessage (
-						SingBot.Irc.SendType.Message,
-						e.Data.Nick,
-						"You dont have access to use this command."
-					);
+                    n.SendMessage(
+                        SingBot.Irc.SendType.Notice,
+                        e.Data.Nick,
+                        "You dont have access to use this command."
+                    );
 					return;
 				}
 				if (args.Length != _command.args + 1 && _command.args != -1) {

@@ -1,6 +1,6 @@
-﻿/*
+/*
 SingBot: The C# IRC Bot
-Copyright (C) 2010 The SingBot Project
+Copyright (C) 2010-2014 The SingBot Project
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,14 +17,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#region Using directives
-using System.Reflection;
-using System.Runtime.CompilerServices;
-#endregion
 
-[assembly: AssemblyTitle("SingBot GUI for Console")]
-[assembly: AssemblyProduct("SingBot GUI for Console")]
-[assembly: AssemblyDescription("A simple Console GUI for The SingBot IRC Bot.")]
-[assembly: AssemblyCompany("The SingBot project [http://singbot.unix-net.ru]")]
-[assembly: AssemblyCopyright("(c) 2010-2014 The SingBot Project")]
-[assembly: AssemblyVersion("2.0.1.*")]
+namespace SingBot {
+	partial class Service {
+
+	}
+}

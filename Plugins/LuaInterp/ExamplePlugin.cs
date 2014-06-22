@@ -74,7 +74,9 @@ namespace SingBot.Plugins {
 
 
 		#region " Event handles "
-		void Bot_OnMessage(Network n, Irc.IrcEventArgs e) {
+		void Bot_OnMessage(Network n, Irc.IrcEventArgs e) 
+        {
+            if (!IsChannelEnabled(e.Data.Channel)) return;
             string[] args = e.Data.Message.Split(' ');
             if (args.Length < 1)
             {

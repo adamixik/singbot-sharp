@@ -43,6 +43,7 @@ namespace SingBot.Scripts {
         #region " Events "
         void Bot_OnChannelMessage(Network network, Irc.IrcEventArgs e)
         {
+            if (!IsChannelEnabled(e.Data.Channel)) return;
             WebClient x = new WebClient();
             
             string[] args = e.Data.Message.Split(' ');

@@ -8,8 +8,8 @@
     <ProjectGuid>{D36AE208-DABA-4A72-BF3C-3E25869E0B9A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Console</RootNamespace>
-    <AssemblyName>Console</AssemblyName>
+    <RootNamespace>SingBot</RootNamespace>
+    <AssemblyName>SingBot.Console</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>

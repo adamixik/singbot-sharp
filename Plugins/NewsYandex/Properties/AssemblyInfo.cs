@@ -24,4 +24,4 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyVersion("1.2.0.*")]
+[assembly: AssemblyVersion("2.0.1.*")]

@@ -43,6 +43,9 @@ namespace SingBot.Plugins {
 			Bot.OnQueryMessage += new IrcEventHandler (Bot_OnMessage);
 			
 			settings = new CompilerSettings ();
+            settings.AssemblyReferences.Add("SingBot.Engine.dll");
+            settings.AssemblyReferences.Add("SingBot.Util.dll");
+            settings.WarningsAreErrors = false;
 			mem_stream = new MemoryStream ();
 			agent_stderr = new StreamWriter (mem_stream);
 			printer = new StreamReportPrinter (agent_stderr);
@@ -85,6 +88,7 @@ namespace SingBot.Plugins {
 		#region " Event handles "
 		void Bot_OnMessage (Network n, Irc.IrcEventArgs e)
 		{
+            if (!IsChannelEnabled(e.Data.Channel)) return;
 			Permissions.AccessLevel level = Bot.GetPermissions ().GetAccess (Bot.GetPermissions ().GetLogin (e, n));
 			if (level < Permissions.AccessLevel.ACCESS_FULL)
 				return;
