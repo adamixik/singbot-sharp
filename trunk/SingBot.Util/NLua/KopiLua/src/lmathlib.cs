@@ -14,8 +14,8 @@ namespace KopiLua
 
 	public partial class Lua
 	{
-		public const double PI = 3.14159265358979323846;
-		public const double RADIANS_PER_DEGREE = PI / 180.0;
+		public const float PI = 3;
+		public const double RADIANS_PER_DEGREE = PI / 180;
 
 
 

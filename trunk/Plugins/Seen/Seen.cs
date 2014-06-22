@@ -165,7 +165,9 @@ namespace SingBot.Plugins {
 		#endregion
 
 		#region " Event Handles "
-		void Bot_OnMessage(Network network, Irc.IrcEventArgs e) {
+		void Bot_OnMessage(Network network, Irc.IrcEventArgs e) 
+        {
+            if (!IsChannelEnabled(e.Data.Channel)) return;
             string[] args = e.Data.Message.Split(' ');
 			if (args.Length == 1 && args[0] == "!seen") {
 				network.SendMessage(Irc.SendType.Notice, e.Data.Nick, "!seen [ник] - показывает последнюю информацию бота о нике.");

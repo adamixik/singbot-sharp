@@ -39,17 +39,9 @@ namespace SingBot {
 		private readonly string _prefix = "!";
 		
 		private Permissions Permissions = null;
-		
-        public class ScriptDomain
-        {
-            public string file;
-            public string name;
-            public AppDomain domain;
-            public Assembly assembly;
-        }
 
 		#region " Constructor/Destructor/Dispose "
-		public Bot ()
+		public Bot (string configfile)
 		{
 			#region " Header "
 			Console.WriteLine ("SingBot: The C# IRC Bot  - v" + System.Reflection.Assembly.GetExecutingAssembly ().GetName ().Version.ToString () + " - [http://singbot.unix-net.ru]");
@@ -68,12 +60,13 @@ namespace SingBot {
 			AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler (AssemblyResolveHandler);
 			
 			#region " Load Configuration "
-			if (!File.Exists ("Configuration.xml")) {
-				Console.WriteLine ("Config file 'Configuration.xml' not found!");
+			if (!File.Exists (configfile)) {
+				Console.WriteLine ("Configuration file '" + configfile + "' not found!");
+                Console.ReadKey();
 				Environment.Exit (0);
 			}
 			configuration = new XmlDocument ();
-			configuration.Load ("Configuration.xml");
+            configuration.Load(configfile);
 			foreach (XmlElement e in configuration.GetElementsByTagName("Network")) {
 				Network n = new Network ();
 				networks.Add (n);
@@ -163,13 +156,12 @@ namespace SingBot {
 
         public void LoadScripts()
         {
-            for (int i = 0; i < scripts.Count; i++ )
+            foreach(var d in scripts)
             {
-                Console.WriteLine("Unloading script...");
-                scripts[i].Dispose();
-                scripts.RemoveAt(i);
+                d.Value.Dispose();
                 GC.Collect();
             }
+            scripts.Clear();
             load_scripts.Clear();
             foreach (XmlElement f in configuration.GetElementsByTagName("Script"))
             {
@@ -226,7 +218,22 @@ namespace SingBot {
                 if (t.BaseType == typeof(Plugin))
                 {
                     Plugin p = (Plugin)Activator.CreateInstance(t, o);
-                    plugins.Add(p);
+                    foreach (XmlElement e1 in configuration.GetElementsByTagName("Plugin"))
+                    {
+                        if (e1.Attributes["Name"].Value == f.Name)
+                        {
+                            if (e1.Attributes["Channels"] != null)
+                            {
+                                string[] channels = e1.Attributes["Channels"].Value.Split(',');
+                                Console.WriteLine("Adding channels " + e1.Attributes["Channels"].Value + " to plugin " + f.Name);
+                                foreach (string c in channels)
+                                {
+                                    p.AddChannelEnabled(c);
+                                }
+                            }
+                        }
+                    }
+                    plugins.Add(f.Name, p);
                     return p;
                 }
             return null;
@@ -245,30 +252,61 @@ namespace SingBot {
 			//return Assembly.LoadFrom ("Plugins/" + e.Name);
 		}
 		
-        public Script LoadScript(string path)
+        public bool CompileScript(FileInfo f, string file)
         {
-            object[] o = { this };
-            string file = Path.GetTempFileName();
-            FileInfo f = new FileInfo(path);
             if (f.Extension == ".cs")
             {
-                if (!CompileCSharpScript(f.FullName, file)) return null; 
+                if (!CompileCSharpScript(f.FullName, file)) return false; 
             }
             else if (f.Extension == ".vb")
             {
-                if (!CompileVBScript(f.FullName, file)) return null;
+                if (!CompileVBScript(f.FullName, file)) return false;
             }
             else
             {
-                return null;
+                return false;
+            }
+            return true;
+        }
+
+        public Script LoadScript(string path)
+        {
+            object[] o = { this };
+            FileInfo f = new FileInfo(path);
+            string file = f.FullName + ".script";
+            FileInfo scr = new FileInfo(file);
+            if(!scr.Exists)
+            {
+                if (!CompileScript(f, file)) return null;
+            }
+            else
+            {
+                if (f.LastWriteTime > scr.LastWriteTime)
+                    if (!CompileScript(f, file)) return null;
             }
 
-            Assembly a = System.Reflection.Assembly.LoadFile(file + ".dll");
+            Console.WriteLine("Loading script: " + scr.Name);
+            Assembly a = System.Reflection.Assembly.LoadFile(file);
             foreach (Type t in a.GetTypes())
                 if (t.BaseType == typeof(Script))
                 {
                     Script s = (Script)Activator.CreateInstance(t, o);
-                    scripts.Add(s);
+                    foreach (XmlElement e1 in configuration.GetElementsByTagName("Script"))
+                    {
+                        if (e1.Attributes["Name"].Value == f.Name)
+                        {
+                            if (e1.Attributes["Channels"] != null)
+                            {
+                                string[] channels = e1.Attributes["Channels"].Value.Split(',');
+                                Console.WriteLine("Adding channels " + e1.Attributes["Channels"].Value + " to script " + f.Name);
+                                foreach (string c in channels)
+                                {
+                                    s.AddChannelEnabled(c);
+                                }
+                            }
+                        }
+                    }
+                    scripts.Add(f.Name, s);
                     return s;
                 }
             return null;
@@ -290,7 +328,7 @@ namespace SingBot {
                       {"CompilerVersion", "v3.5"}
             };
 			CSharpCodeProvider provider = new CSharpCodeProvider (providerOptions);
-			CompilerParameters compilerParams = new CompilerParameters () { OutputAssembly = file + ".dll", GenerateExecutable = false };
+			CompilerParameters compilerParams = new CompilerParameters () { OutputAssembly = file, GenerateExecutable = false };
 			compilerParams.ReferencedAssemblies.Add ("System.dll");
 			compilerParams.ReferencedAssemblies.Add ("System.Xml.dll");
 			compilerParams.ReferencedAssemblies.Add ("System.Data.dll");
@@ -317,7 +355,7 @@ namespace SingBot {
                       {"CompilerVersion", "v3.5"}
                     };
 			VBCodeProvider provider = new VBCodeProvider (providerOptions);
-            CompilerParameters compilerParams = new CompilerParameters { OutputAssembly = file + ".dll", GenerateExecutable = false };
+            CompilerParameters compilerParams = new CompilerParameters { OutputAssembly = file, GenerateExecutable = false };
 			compilerParams.ReferencedAssemblies.Add ("System.dll");
 			compilerParams.ReferencedAssemblies.Add ("System.Xml.dll");
 			compilerParams.ReferencedAssemblies.Add ("System.Data.dll");
@@ -351,15 +389,16 @@ namespace SingBot {
 			}
 		}
 
-		List<Plugin> plugins = new List<Plugin>();
-		public List<Plugin> Plugins {
+        Dictionary<string, Plugin> plugins = new Dictionary<string, Plugin>();
+        public Dictionary<string, Plugin> Plugins
+        {
 			get {
 				return plugins;
 			}
 		}
 
-        List<Script> scripts = new List<Script>();
-        public List<Script> Scripts
+        Dictionary<string, Script> scripts = new Dictionary<string, Script>();
+        public Dictionary<string, Script> Scripts
         {
             get
             {

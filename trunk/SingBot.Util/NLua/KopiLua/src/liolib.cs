@@ -274,7 +274,7 @@ namespace KopiLua
 
 		private static int ReadNumber (LuaState L, Stream f) {
 		  //LuaNumberType d;
-			object[] parms = { (object)(double)0.0 };
+			object[] parms = { (double)0 };
 			if (fscanf (f, LUA_NUMBER_SCAN, parms) == 1) {
 				LuaPushNumber (L, (double)parms [0]);
 				return 1;

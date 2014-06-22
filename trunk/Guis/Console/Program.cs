@@ -1,6 +1,6 @@
 ﻿/*
 SingBot: The C# IRC Bot
-Copyright (C) 2010 The SingBot Project
+Copyright (C) 2010-2014 The SingBot Project
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,7 +31,10 @@ namespace SingBot {
 
 		static Bot bot;
 		static void Main(string[] args) {
-			bot = new Bot();
+            string config = "Configuration.xml";
+            if (args.Length == 1)
+                config = args[0];
+			bot = new Bot(config);
 			bot.OnRawMessage+=new IrcEventHandler(bot_OnRawMessage);
 			bot.ConnectAll();
 			new Thread(new ThreadStart(ReadCommand)).Start();		

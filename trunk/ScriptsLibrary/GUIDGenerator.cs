@@ -41,6 +41,7 @@ namespace SingBot.Scripts {
         #region " Events "
         void Bot_OnChannelMessage(Network network, Irc.IrcEventArgs e)
         {
+            if (!IsChannelEnabled(e.Data.Channel)) return;
             string[] args = e.Data.Message.Split (' ');
 
             if(args.Length == 1 && args[0] == "!guid")

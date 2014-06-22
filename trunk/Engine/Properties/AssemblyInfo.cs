@@ -26,5 +26,5 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyProduct("SingBot IRC Bot")]
 [assembly: AssemblyDescription("A simple but extremly flexible and powerful IRC Bot.")]
 [assembly: AssemblyCompany("The SingBot project [http://singbot.unix-net.ru]")]
-[assembly: AssemblyCopyright("(c) 2005 The SingBot Project")]
-[assembly: AssemblyVersion("1.1.2.*")]
+[assembly: AssemblyCopyright("(c) 2010-2014 The SingBot Project")]
+[assembly: AssemblyVersion("2.0.1.*")]

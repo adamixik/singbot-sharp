@@ -24,7 +24,6 @@ using System.Threading;
 #endregion
 
 namespace SingBot.Scripts {
-
     public class ColorTestCommand : SingBot.Command
     {
         public ColorTestCommand() : base("colortest", "{pfx}colortest [color]", Permissions.AccessLevel.ACCESS_NULL, CommandType.COMMAND_TYPE_CHANNEL, 1)
@@ -33,8 +32,8 @@ namespace SingBot.Scripts {
         }
         public override void OnCommand(Network n, Irc.IrcEventArgs e, CommandType type, List<string> args)
         {
+            if (!Bot.GetSingleton().Scripts[System.Reflection.Assembly.GetExecutingAssembly().GetName().Name].IsChannelEnabled(e.Data.Channel)) return;
             base.OnCommand(n, e, type, args);
-
             string msg = "colortest!";
             switch(args[0])
             {
@@ -76,6 +75,7 @@ namespace SingBot.Scripts {
 
         public override void OnCommand(Network n, Irc.IrcEventArgs e, CommandType type, List<string> args)
         {
+            if (!Bot.GetSingleton().Scripts[System.Reflection.Assembly.GetExecutingAssembly().GetName().Name].IsChannelEnabled(e.Data.Channel)) return;
             base.OnCommand(n, e, type, args);
             Bot.GetSingleton().LoadScripts();
         } 
@@ -86,7 +86,6 @@ namespace SingBot.Scripts {
 		#region " Constructor/Destructor "
         public SimpleCommands(Bot bot)
 			: base(bot) {
-                //new Lariska();
                 new ColorTestCommand();
                 //new RehashScripts();
 		}

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{41B4D9C3-1AE3-8CF6-97AE-A014ACFA1F4A}</ProjectGuid>
+    <ProjectGuid>{200F7C2F-3B9D-4A07-9EAD-DDC305067251}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSharpInterp</RootNamespace>
-    <AssemblyName>CSharpInterp</AssemblyName>
+    <RootNamespace>Log</RootNamespace>
+    <AssemblyName>Log</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
@@ -170,22 +170,15 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Mono.CSharp">
-      <HintPath>Dependencies\Mono.CSharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSharpInterp.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Engine\SingBot.Engine.csproj">
       <Project>{BE3255DB-4C44-47D0-B217-DDB05403850B}</Project>
       <Name>SingBot.Engine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SingBot.Util\SingBot.Util.csproj">
-      <Project>{83e02153-b560-4607-a1f6-70a2826ad39e}</Project>
-      <Name>SingBot.Util</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -34,6 +34,7 @@ namespace SingBot.Scripts {
 
         public override void OnCommand(Network n, Irc.IrcEventArgs e, CommandType type, List<string> args)
         {
+            if (!Bot.GetSingleton().Scripts[System.Reflection.Assembly.GetExecutingAssembly().GetName().Name].IsChannelEnabled(e.Data.Channel)) return;
             base.OnCommand(n, e, type, args);
             string o = "";
             foreach (string a in args)
